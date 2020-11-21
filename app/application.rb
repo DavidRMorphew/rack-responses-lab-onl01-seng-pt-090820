@@ -6,11 +6,8 @@ class Application
             Time.now.to_s.split(" ")[1].split(":").select.with_index {|e, i| i < 2}.join.to_i
         end
         
-        if mil_time > 1200 
-            resp.write "Good Afternoon!" 
-        else
-            resp.write "Good Morning!"
-        end
+        (mil_time > 1200) ? (resp.write "Good Afternoon!") : (resp.write "Good Morning!")
+    
         
         resp.finish 
     end 
